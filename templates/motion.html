@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Smart Security</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='mystyle.css') }}">
+
+    <style>
+        /* Header Style */
+        header {
+            background-color: #444;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Footer Style */
+        footer {
+            background-color: #444;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Additional styles for the body */
+        body {
+            background: linear-gradient(to right, #fc5c7d, #6a82fb);
+            margin: 0;
+            padding-bottom: 50px; /* Adjusted for the footer */
+        }
+
+        /* Style for the navigation */
+        #nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Style for the button */
+        .button {
+            background-color: #444;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* Style for the row */
+        .row {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        /* Style for the frame */
+        .frame1 {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-width: 80%; /* Adjusted width */
+        }
+
+        /* Style for images within frame */
+        .frame1 img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Smart Security</h1>
+</header>
+
+<div class="row">
+    <div class="frame1">
+        <img src="{{url_for('motion_video')}}" alt="">
+    </div>
+</div>
+
+<div id="nav">
+    <a href="index" class="button">Back to menu page</a>
+</div>
+
+
+
+</body>
+</html>

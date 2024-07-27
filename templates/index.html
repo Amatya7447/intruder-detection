@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Security</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('{{ url_for('static',filename='alberto-rodriguez-santana-i_nIoSCdHv4-unsplash.jpg') }}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            
+            background-position: center; 
+            
+            display: flex;
+            
+            justify-content: center;
+        }
+
+        .header {
+            background-color: #808080;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
+
+        .footer {
+            background-color: #808080;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        .program {
+            text-align: center;
+        }
+
+        .program a {
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .program a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to Smart Security</h1>
+    </div>
+
+    <div class="container">
+        <br><br><br><br><br><br><br>
+        <h2>Menu Driven Program</h2>
+        <div class="program">
+            <a href="motion">1. Motion Detector</a>
+            <a href="name">2. Name Detector</a>
+            <a href="mask">3. Mask Detector</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Smart Security. All rights reserved.</p>
+    </div>
+</body>
+</html>

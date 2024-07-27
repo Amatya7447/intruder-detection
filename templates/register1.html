@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background: url('{{ url_for('static',filename='milosz-klinowski-BW0d0IllW8E-unsplash.jpg') }}'); 
+            background-size: cover;
+            background-color: #f8f9fa;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .registration-form {
+            width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .registration-form h2 {
+            margin-bottom: 20px;
+            color: #333333;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-3 {
+            margin-top: 15px;
+        }
+
+        .mb-0 {
+            margin-bottom: 0;
+        }
+
+        .mb-3 {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-form">
+        <h2>Registration</h2>
+        <form id="registration-form" action="/register" method="POST">
+            <div class="form-group">
+                <input type="text" class="form-control" name="username" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" class="form-control" name="phone_no" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="R_address" placeholder="Enter your address" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="U_password" placeholder="Enter your password" required>
+            </div>
+            <div class="form-group">
+                <select class="form-control" name="gender" required>
+                    <option value="">Select gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" name="age" placeholder="Enter your age" required>
+            </div>
+            <div class="form-group">
+                <input type="date" class="form-control" name="dob" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+        </form>
+        <p id="message" class="text-center mt-3 mb-0"></p>
+        <p class="text-center mt-3 mb-0">Already have an account? <a href="/">Login here</a></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById("registration-form").addEventListener("submit", function(event) {
+            // Prevent form submission
+            event.preventDefault();
+            
+            // Your code to submit the form via AJAX
+            var formData = new FormData(this);
+            fetch('/register', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Redirect to the success page or display message
+                    document.getElementById("message").innerText = "Registration successful!";
+                    // Optionally redirect to another page after a short delay
+                    setTimeout(function() {
+                        window.location.href = "/";
+                    }, 2000); // Redirect after 2 seconds
+                } else {
+                    // Handle error response
+                    console.error('Registration failed');
+                    document.getElementById("message").innerText = "Registration failed. Please try again.";
+                }
+            })
+            .catch(error => {
+                console.error('Error submitting registration form:', error);
+                document.getElementById("message").innerText = "An unexpected error occurred. Please try again later.";
+            });
+        });
+    </script>
+</body>
+</html>

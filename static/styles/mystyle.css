@@ -1,0 +1,34 @@
+
+  
+  .frame1{
+  top: 0;
+  left: 0;
+  
+  
+
+  }
+  .frame2{
+ 
+  top: 0;
+  right: 640px;;
+  
+  }
+  .frame3{
+    top: 480px;
+  }
+  #nav a {
+    background-color: #222fe0e5;
+    padding: 15px;
+    margin: 15px;
+    text-decoration: none;
+    color: #f1f3f4;
+    border-radius: 5px;
+    font-size: 20px;
+
+}
+#nav a:hover {
+    padding: 12px;
+    box-shadow: #000 0px 0px 3px 3px;
+
+
+}
